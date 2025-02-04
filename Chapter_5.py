@@ -3,7 +3,7 @@
 # IF STATEMENTS #
 print("-----------------------If statements-------------------------")
 
-#5-1
+# EXTRA EXERCISES (prompted by Deep Seek) #
 """
 ### Exercise: Conditional Tests in Python
 
@@ -78,6 +78,7 @@ while True:
     
 """
 
+#5-1
 car = 'Hyundai'
 print("Is car == 'Hyundai'? I predict True.")
 print(car == 'Hyundai')

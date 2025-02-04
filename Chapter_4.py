@@ -54,7 +54,7 @@ first_cubes = [c**3 for c in cubes_range]
 print(first_cubes)
 print("------------------")
 
-# EXTRA EXERCISES
+# EXTRA EXERCISES (prompt from OpenAI, answers by me)
 
 """
 Exercise: List Comprehension Practice
