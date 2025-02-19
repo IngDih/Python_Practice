@@ -178,7 +178,112 @@ people = {
 
 for person, info in people.items():
     print(f"{person.title()} {info['last_name'].title()} is {info['age']} years old and lives in {info['city'].title()}.")
-
-
-
 print("------------------") 
+
+
+#6-8
+pets = [
+    {'name': 'buddy', 'species': 'dog', 'owner': 'bob'},
+    {'name': 'whiskers', 'species': 'cat', 'owner': 'amy'},
+    {'name': 'juno', 'species': 'cat', 'owner': 'ingrid'},
+    {'name': 'aimee', 'species': 'bird', 'owner': 'john'}
+]
+
+for animal in pets:
+    print(f"Name: {animal['name']}, Species: {animal['species']}, owner: {animal['owner']}\n")
+print("------------------") 
+
+
+#6-9
+favorite_places = {
+    'Alice': ['Paris', 'Tokyo', 'New York'],
+    'Bob': ['Grand Canyon', 'Yosemite'],
+    'Charlie': ['London', 'Sydney']
+}
+
+for person in favorite_places:
+    places = ", ".join(favorite_places[person]) #without .join() the places are formatted in a list.
+    print(f"{person}'s favorite places are {places}.")
+print("------------------")
+
+
+#6-10
+people = {
+    "aimee": [3, 6],
+    "toby": [1, 8],
+    "noodles": [8, 9], 
+    "callie": [5, 1, 3],
+    "fred": [0, 9, 5]
+}
+
+for person in people:
+    nums = people[person]  
+    if len(nums) == 1:  
+        nums_str = str(nums[0])
+    else:
+        nums_str = ", ".join(str(num) for num in nums[:-1]) + f" and {nums[-1]}"
+    print(f"{person.title()} has {nums_str} as favorite numbers.")
+print("------------------")
+
+
+#6-11
+cities = {
+    'new york': {
+        'country': 'usa',
+        'population': "8.2M",
+        'fact': "its nickname is 'The Big Apple'."
+    },
+    'tokyo': {
+        'country': 'japan',
+        'population': "13.96M",
+        'fact': "it's the most populous metropolitan area in the world."
+    },
+    'sydney': {
+        'country': 'australia',
+        'population': "5.312M",
+        'fact': "it's home to the iconic Sydney Opera House."
+    }
+}
+
+for city, dict in cities.items():  # 'dict' holds the dictionary
+    country = dict['country']
+    population = dict['population']
+    fact = dict['fact']
+    
+    if country == "usa":
+        print(f"{city.title()} is located in the {country.upper()} with its population around {population}. A fun fact about this city is that {fact}")
+    else:
+        print(f"{city.title()} is located in {country.upper()} with its population around {population}. A fun fact about this city is that {fact}")
+print("------------------")        
+
+
+#6-12
+#free exercise so I will do some practice in acessing values
+
+comprinhas = {
+    'tablet': {'brand': 'samsung', 'color': 'silver', 'price': 299.90},
+    'phone': {'brand': 'motorolla', 'color': 'blue', 'price': 699.90},
+    'watch': {'brand': 'apple', 'color': 'silver', 'price': 169.90}    
+}
+#comprinhas in portuguese means literally 'small purchases'.
+
+total_price = 0
+for compra, dict in comprinhas.items():    
+    total_price += dict["price"]
+    products = ", ".join(comprinhas)
+print(f"Today I bought a {products} on amazon that cost me {total_price}.")
+
+#formatted properly
+total_price = 0
+product_list = list(comprinhas.keys())  # Get a list of product names
+
+for compra, details in comprinhas.items():    
+    total_price += details["price"]
+
+# Formatting the product list properly
+if len(product_list) > 1:
+    products = ", ".join(product_list[:-1]) + f" and {product_list[-1]}"
+else:
+    products = product_list[0]
+
+print(f"Today I bought a {products} on Amazon that cost me {total_price:.2f}.")
